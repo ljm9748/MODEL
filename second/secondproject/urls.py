@@ -18,6 +18,8 @@ from django.urls import path
 from django.conf.urls.static import static 
 from django.conf import settings
 import Blog.views
+import Portfolio.views
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -25,5 +27,6 @@ urlpatterns = [
     path('Blog/<int:Blog_id>', Blog.views.detail, name="detail"),
     path('Blog/new/', Blog.views.new, name="new"),
     path('Blog/create', Blog.views.create, name="create"),
+    path('Blog/protfolio', Portfolio.views.portfolio, name="portfolio"),
 
 ]
