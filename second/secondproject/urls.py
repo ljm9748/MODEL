@@ -19,6 +19,8 @@ from django.conf.urls.static import static
 from django.conf import settings
 import Blog.views
 import Portfolio.views
+from django.conf import settings
+from django.conf.urls.static import static
 
 
 urlpatterns = [
@@ -27,6 +29,7 @@ urlpatterns = [
     path('Blog/<int:Blog_id>', Blog.views.detail, name="detail"),
     path('Blog/new/', Blog.views.new, name="new"),
     path('Blog/create', Blog.views.create, name="create"),
-    path('Blog/protfolio', Portfolio.views.portfolio, name="portfolio"),
+    path('Blog/portfolio', Portfolio.views.portfolio, name="portfolio"),
+    
 
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
